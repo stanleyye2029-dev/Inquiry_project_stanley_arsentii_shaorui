@@ -1,100 +1,140 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link/>
-        <title>JUICY BBQ</title>
-        <style>
-            body {
-                background-color: sandybrown;
-            }
-            #logo1 {
-                width: 100px;
-                height: 100px;
-                position: absolute;
-                top: 10px;
-                left: 10px;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUICY BBQ</title>
+    <link rel="icon" type="image/png" href="assets/pictures/Oak and Ember.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: sandybrown;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255);/* rgba(139, 69, 19, 0.95);*/
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-group img {
+            height: 70px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links a img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .nav-links a img:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        #menu-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        main {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;   /* vertical center */
+            align-items: center;       /* horizontal center */
+            text-align: center;
+        }
+
+        #hero-heading {
+            position: relative;
+            z-index: 1;
+            color: rgba(139, 69, 19, 0.95);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            transform: translateY(-40px);
+            -webkit-text-stroke: 2px rgb(255, 255, 255);
+            text-shadow:
+                0 0 0 rgb(0, 0, 0),
+                3px 3px 0 black,
+                -3px 3px 0 black,
+                 3px -3px 0 black,
+                -3px -3px 0 black;
             }
 
-            #logo2 {
-                width: 200px;
-                height: 100px;
-                position: absolute;
-                top: 10px;
-                left: 150px;
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
             }
 
-            #link1 {
-                width: 200px;
-                height: 100px;
-                position: absolute;
-                top: 10px;
-                left: 400px;
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            #link2 {
-                width: 200px;
-                height: 100px;
-                position: absolute;
-                top: 10px;
-                left: 610px;
+            .logo-group img {
+                height: 50px;
             }
 
-            #button1 {
-                width: 100px;
-                height: 100px;
-                position: absolute;
-                top: 10px;
-                left: 900px;
+            .nav-links a img {
+                height: 40px;
             }
-
-            #button2 {
-                width: 100px;
-                height: 100px;
-                position: absolute;
-                top: 10px;
-                left: 1050px;
-            }
-
-            #button3 {
-                width: 100px;
-                height: 100px;
-                position: absolute;
-                top: 10px;
-                left: 1200px;
-            }
-
-            #header-section {
-                background-color: brown;
-                width: 1366px;
-                height: 120px;
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                opacity: 65%;
-            }
-        </style>
-    </head>
-    <body>
-        <header id="header">
-            <div id="header-section">
-            <img id="logo1" src="assets/images.png" alt="logo"/>
-            <img id="logo2" src="assets/images.png" alt="logo"/>
-            <a href="...">
-                <img id="link1" src="assets/images.png"/>
-            </a>
-            <a href="...">
-                <img id="link2" src="assets/images.png"/>
-            </a>
-            <a href="...">
-                <img id="button1" src="assets/images.png">
-            </a>
-            <a href="...">
-                <img id="button2" src="assets/images.png">
-            </a>
-            <a href="...">
-                <img id="button3" src="assets/images.png"/>
-            </a>
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-group">
+            <img src="assets/pictures/Oak and Ember.png" alt="logo">
+            <img src="assets/pictures/images.png" alt="logo">
         </div>
-        </header>
-    </body>
+        <nav class="nav-links">
+            <a href="#"><img src="assets/pictures/images.png" alt="menu"></a>
+            <a href="#"><img src="assets/pictures/images.png" alt="about"></a>
+            <a href="#"><img src="assets/pictures/images.png" alt="order"></a>
+            <a href="#"><img src="assets/pictures/images.png" alt="contact"></a>
+            <a href="#"><img src="assets/pictures/images.png" alt="login"></a>
+        </nav>
+    </header>
+    <main>
+        <video id="menu-background" src="assets/videos/pixelbin-video.mp4" autoplay muted loop></video>
+        <h1 id="hero-heading">Hungry? Well, you're in the right place.</h1>
+    </main>
+</body>
 </html>
